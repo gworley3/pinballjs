@@ -170,7 +170,7 @@ window.onload = function() {
     var ball = Crafty.e("ball, 2D, Canvas, Collision, Color, PinballPhysics");
     ball.attr({x: 5*(Math.random()*4+2), y: 10, w: 8, h: 8});
     ball.color("#cccccc");
-    ball.collision();
+    ball.collision(Crafty.circle({x: ball.x, y: ball.y, radius: ball.w}));
     ball.pinballPhysics(0.2, {x: 0, y: 0}, 8);
 
     //var paddle = Crafty.e("paddle, 2D, Canvas, Collision, Color, Keyboard, PaddleControl");
@@ -183,7 +183,7 @@ window.onload = function() {
     lflipper.attr({x: 0, y: kHeight - 47, w: 60, h: 20});
     lflipper.color("#cc9933");
     lflipper.collision();
-    lflipper.flipperControl("LEFT_ARROW", {x: lflipper.x, y: lflipper.y}, 20, 20, 20, -20);
+    lflipper.flipperControl("LEFT_ARROW", {x: lflipper.x, y: lflipper.y}, 20, 20, 40, -20);
 
     //var rflipper = Crafty.e("flipper, 2D, Canvas, Collision, Color, Keyboard, FlipperControl");
     //rflipper.attr({x: kWidth/2 + 10, y: kHeight - 47, w: 60, h: 20});
